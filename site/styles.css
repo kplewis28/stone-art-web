@@ -92,7 +92,7 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
 .vf-b{bottom:16px;left:16px;border-width:0 0 1px 1px}
 .hero-cap{position:absolute;left:52px;right:16px;bottom:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--t-d)}
 .hero-cap span{background:rgba(6,24,26,.82);padding:8px 10px}
-.hero-cap span:first-child::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:10px;vertical-align:1px;animation:rec 2.4s ease-in-out infinite}
+.hero-cap > span:first-child::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:10px;vertical-align:1px;animation:rec 2.4s ease-in-out infinite}
 @keyframes rec{50%{opacity:.25}}
 .tc{color:var(--gold);font-variant-numeric:tabular-nums}
 .hero h1{font:300 clamp(40px,4.9vw,74px)/1.02 var(--sans);font-stretch:104%;letter-spacing:-.035em;max-width:14ch}
