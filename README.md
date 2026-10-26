@@ -4,6 +4,7 @@ Static site (HTML, CSS, vanilla JS), German (de-CH) with an English toggle.
 
 - `site/`: the website (`index.html`, `impressum.html`, `datenschutz.html`, `styles.css`, `main.js`, `img/`, `fonts/`)
 - `build.mjs`: copies `site/` to `dist/`
+- `functions/_middleware.js`: redirects `stoneartprecision.com` to `www.stoneartprecision.com` (Cloudflare Pages Function)
 
 ## Deploy (Cloudflare Pages)
 
