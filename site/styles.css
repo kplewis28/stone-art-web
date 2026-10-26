@@ -36,11 +36,9 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
 .cf{color:var(--bronze);font-family:var(--mono);font-size:.78em;letter-spacing:-.01em;white-space:normal}
 .dark .cf,.hero .cf,.foot .cf{color:var(--gold)}
 
-/* draft bar */
-.draft{background:var(--ink);color:var(--t-dm);font-size:12.5px;letter-spacing:.02em;text-align:center;padding:7px 16px;border-bottom:1px solid var(--line-d)}
 
 /* header */
-.top{position:absolute;top:33px;left:0;right:0;z-index:20;display:flex;align-items:center;gap:32px;padding:18px var(--pad);color:var(--t-d)}
+.top{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:32px;padding:18px var(--pad);color:var(--t-d)}
 .top.fixed{position:fixed;top:0;background:var(--ink);border-bottom:1px solid var(--line-d);padding-top:12px;padding-bottom:12px;animation:drop .35s ease}
 @keyframes drop{from{transform:translateY(-100%)}to{transform:none}}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font:500 14.5px/1.08 var(--sans);letter-spacing:0}
@@ -78,7 +76,7 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
 
 /* hero: text on solid petrol, the film in its own frame, so nothing gets lost in the footage */
 .hero{position:relative;color:var(--t-d);background:var(--ink);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(36px,5vw,84px);align-items:center;padding-top:118px;padding-bottom:clamp(36px,4vw,56px);min-height:min(calc(100svh - 33px - 58px),860px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:clamp(36px,5vw,84px);align-items:center;padding-top:118px;padding-bottom:clamp(36px,4vw,56px);min-height:min(calc(100svh - 58px),860px)}
 .hero-in{min-width:0}
 /* one frame for every image: facet-cut corners + gold viewfinder marks */
 .frame{position:relative;overflow:hidden;background:var(--ink-2);--f:18px;clip-path:polygon(var(--f) 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,0 100%,0 var(--f))}
@@ -340,7 +338,7 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
 }
 @media (max-width:760px){
   body{font-size:16px;padding-bottom:64px}
-  .top{top:47px;gap:12px;padding:14px 16px}
+  .top{top:0;gap:12px;padding:14px 16px}
   .top.fixed{padding:10px 16px}
   .top .btn.sm{display:none}
   .brand{font-size:13px}
@@ -428,3 +426,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media (max-width:760px){
   body.legal-page{padding-bottom:0}
 }
+
+/* form extras */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-files{margin:0;font-size:14.5px;color:var(--t-lm)}
+.form-files a{color:var(--t-l)}
+.form button[disabled]{opacity:.6;cursor:progress}

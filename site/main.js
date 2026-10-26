@@ -1,6 +1,5 @@
-// Stone Art Precision · draft by clew. German is in the HTML; EN replaces it on demand.
+// Stone Art Precision · German is in the HTML; EN replaces it on demand.
 const EN = {
-  draft: "Draft by clew. Content in [brackets] will be confirmed before launch.",
   nav1: "Settings", nav2: "Trust", nav3: "Process", nav4: "Workshop", nav5: "Gallery", navCta: "Send request",
   heroH: "High-precision stone setting <em>for luxury jewelry houses.</em>",
   heroP: "Pavé, prong, channel, bezel and carré settings with Swiss precision. From our workshop in Sempach, for jewelry manufacturers worldwide.",
@@ -57,11 +56,10 @@ const EN = {
   fFirma: "Company", fName: "Contact person", fMail: "Email", fAnz: "Number of pieces", fArt: "Setting",
   oChoose: "Please choose", oOpen: "Not decided yet",
   fStein: "Stone type / size", phStein: "e.g. diamond 1.3 mm, 120 pcs",
-  fTermin: "Desired date", fMsg: "Message", fFile: "Files or photos", fFileH: "PDF or photos",
-  fSend: "Send request", fDraft: "Draft: this form does not send anything yet.",
+  fTermin: "Desired date", fMsg: "Message", fFiles: "You can send us drawings, CAD files or photos by email to <a href=\"mailto:info@stoneartprecision.com\">info@stoneartprecision.com</a> after your request.",
+  fSend: "Send request", fSending: "Sending…", fOk: "Thank you. Your request has been sent. You will receive our quote within 24–48 hours.", fFail: "Something went wrong. Please write to us at info@stoneartprecision.com.",
   footTag: "Swiss stone setting excellence serving luxury jewelry houses worldwide since 2006.",
-  footFollow: "Follow us", footLiNote: "[confirm: link to the LinkedIn profile]", footRights: "All rights reserved.",
-  footLegal: "Legal", footDs: "Privacy",
+  footRights: "All rights reserved.", footLegal: "Legal", footDs: "Privacy",
   footMade: "Crafted in Switzerland", mCall: "Call", mReq: "Request",
   abPrev: "Back", abNext: "Next", abPause: "Pause automatic change", abPlay: "Resume automatic change",
   vidPause: "Pause video", vidPlay: "Play video", skip: "Skip to content",
@@ -70,7 +68,7 @@ const EN = {
   fErr: "Please fill in the marked fields.",
   hintMouse: "Move the cursor over the photo.", hintTouch: "Tap the photo."
 };
-const DE_EXTRA = { abPlay: "Automatischen Wechsel fortsetzen", vidPlay: "Video abspielen", fDraft: "Entwurf: Dieses Formular sendet noch nichts.", fErr: "Bitte füllen Sie die markierten Felder aus.", hintMouse: "Fahren Sie mit der Maus über das Bild.", hintTouch: "Tippen Sie auf das Bild." };
+const DE_EXTRA = { abPlay: "Automatischen Wechsel fortsetzen", vidPlay: "Video abspielen", fSending: "Wird gesendet…", fOk: "Danke. Ihre Anfrage ist bei uns eingegangen. Sie erhalten unser Angebot innerhalb von 24–48 Stunden.", fFail: "Das hat leider nicht geklappt. Bitte schreiben Sie uns an info@stoneartprecision.com.", fErr: "Bitte füllen Sie die markierten Felder aus.", hintMouse: "Fahren Sie mit der Maus über das Bild.", hintTouch: "Tippen Sie auf das Bild." };
 const TITLE = {
   de: document.title,
   en: "Stone setting Switzerland for luxury jewelry houses | Stone Art Precision GmbH, Sempach"
@@ -267,12 +265,25 @@ document.querySelectorAll(".loupe").forEach(fig => {
 
 // mock form: never sends
 const form = document.getElementById("form");
-form.addEventListener("submit", e => {
+const msg = document.getElementById("form-msg");
+const sendBtn = form.querySelector("button[type=submit]");
+form.addEventListener("submit", async e => {
   e.preventDefault();
   const d = lang === "en" ? EN : DE;
   const bad = [...form.querySelectorAll("[required]")].filter(f => !f.checkValidity());
   form.querySelectorAll("[required]").forEach(f => f.setAttribute("aria-invalid", bad.includes(f)));
-  document.getElementById("form-msg").textContent = bad.length ? d.fErr : d.fDraft;
-  if (bad.length) bad[0].focus();
+  if (bad.length) { msg.textContent = d.fErr; bad[0].focus(); return; }
+  msg.textContent = d.fSending;
+  sendBtn.disabled = true;
+  try {
+    const r = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+    if (!r.ok) throw new Error(r.status);
+    form.reset();
+    msg.textContent = d.fOk;
+  } catch {
+    msg.textContent = d.fFail;
+  } finally {
+    sendBtn.disabled = false;
+  }
 });
 form.addEventListener("input", e => { if (e.target.required && e.target.checkValidity()) e.target.removeAttribute("aria-invalid"); });
