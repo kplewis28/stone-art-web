@@ -440,3 +440,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .form-files{margin:0;font-size:14.5px;color:var(--t-lm)}
 .form-files a{color:var(--t-l)}
 .form button[disabled]{opacity:.6;cursor:progress}
+@media (max-width:760px){
+  .sign{gap:12px;margin-top:26px}
+  .sign img{width:44px;height:44px;clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px)}
+  .sign b{font-size:16px}
+  .sign span{font-size:10px;margin-top:3px}
+}
