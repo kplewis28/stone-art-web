@@ -1,7 +1,7 @@
 // Stone Art Precision · German is in the HTML; EN replaces it on demand.
 const EN = {
   nav1: "Settings", nav2: "Trust", nav3: "Process", nav4: "About", nav5: "Gallery", navCta: "Send request",
-  heroH: "High-precision stone setting <em>for luxury jewelry houses.</em>",
+  heroH: "High-precision <em>stone setting.</em>",
   heroP: "Pavé, prong, channel, bezel and carré settings with Swiss precision. From our workshop in Sempach, for jewelry manufacturers worldwide.",
   heroB1: "Send a request", heroB2: "How we work", heroCap: "From the workshop",
   t1: "Sempach, Switzerland", t2: "since 2006", t3: "Worldwide", t4: "Confidential",
@@ -44,7 +44,7 @@ const EN = {
   we1: "Behind Stone Art Precision is David Baer. He sets gemstones under the microscope and by hand, for jewelry manufacturers in Switzerland and worldwide.",
   we2: "That experience is in every piece: he sees early what a piece needs, and sets it so the stone sits securely and the design comes through.",
   f1t: "Workshop", f2t: "Since",
-  altDb: "Portrait of David Baer", dbRole: "Owner &amp; stone setter",
+  dbRole: "Owner &amp; stone setter",
   gaH: "Precision <em>in every detail.</em>",
   gaP: "Portfolio images represent the quality of our craftsmanship. All client work is handled with strict confidentiality.",
   altEm: "Ring with an emerald cabochon in a bezel and diamonds in the shoulders, clamped on the bench",

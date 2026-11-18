@@ -236,8 +236,7 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
 .years{display:flex;flex-direction:column;gap:6px;margin:6px 0 30px;padding:22px 0 22px 22px;border-left:3px solid var(--gold)}
 .years b{font:400 clamp(36px,4vw,52px)/1.05 var(--sans);font-stretch:104%;letter-spacing:-.03em;color:var(--ink)}
 .years span{font:400 clamp(18px,1.6vw,21px)/1.35 var(--sans);color:var(--t-l)}
-.sign{display:flex;align-items:center;gap:16px;margin-top:32px}
-.sign img{width:64px;height:64px;object-fit:cover;flex-shrink:0;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.sign{margin-top:32px}
 .sign b{display:block;font:500 17px/1.2 var(--sans);color:var(--ink)}
 .sign span{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--t-lm);margin-top:5px}
 
@@ -443,8 +442,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .form-files a{color:var(--t-l)}
 .form button[disabled]{opacity:.6;cursor:progress}
 @media (max-width:760px){
-  .sign{gap:12px;margin-top:26px}
-  .sign img{width:44px;height:44px;clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px)}
+  .sign{margin-top:26px}
   .sign b{font-size:16px}
   .sign span{font-size:10px;margin-top:3px}
 }
