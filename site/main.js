@@ -115,7 +115,13 @@ setHints(DE);
 // header turns solid once the hero is gone
 const header = document.getElementById("top");
 const hero = document.querySelector(".hero");
-new IntersectionObserver(([e]) => header.classList.toggle("fixed", !e.isIntersecting), { rootMargin: "-80px 0px 0px 0px" }).observe(hero);
+// Mobile bottom bar (Anrufen / Anfrage): hidden while the hero is on screen, the hero already has both actions.
+const mbar = document.querySelector(".mbar");
+if (mbar) mbar.classList.add("hide");
+new IntersectionObserver(([e]) => {
+  header.classList.toggle("fixed", !e.isIntersecting);
+  if (mbar) mbar.classList.toggle("hide", e.isIntersecting);
+}, { rootMargin: "-80px 0px 0px 0px" }).observe(hero);
 
 // sections fade in once
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;

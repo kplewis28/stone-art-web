@@ -398,6 +398,8 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
   .mbar a.on{flex-direction:row-reverse}
   .mbar a.on{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 9'%3E%3Cpath d='M0 4.5h15.5M12 1l3.5 3.5L12 8' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E")}
   .mbar a.on{background:var(--gold);color:var(--ink)}
+  .mbar{transition:transform .35s ease,visibility 0s linear 0s}
+  .mbar.hide{transform:translateY(100%);visibility:hidden;transition:transform .35s ease,visibility 0s linear .35s}
   .lens{width:150px;height:150px;margin:-75px 0 0 -75px}
 }
 
