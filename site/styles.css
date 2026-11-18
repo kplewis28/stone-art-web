@@ -232,6 +232,11 @@ h1 em,.h2 em{font-family:var(--script);font-style:italic;font-weight:400;font-si
 .facts div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-l)}
 .facts dt{font:400 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);padding-top:3px}
 .facts dd{margin:0}
+.kicker{font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin:0 0 18px}
+.sign{display:flex;align-items:center;gap:16px;margin-top:32px}
+.sign img{width:64px;height:64px;object-fit:cover;flex-shrink:0;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.sign b{display:block;font:500 17px/1.2 var(--sans);color:var(--ink)}
+.sign span{display:block;font:400 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--t-lm);margin-top:5px}
 
 /* werkstatt photo */
 .we-img{margin:0;aspect-ratio:4/5}
